@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AStar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="title">
+        <h1>Prim迷宫生成-A*寻路算法演示</h1>
+        <div class="label">
+            <span class="icon" style="background-color: red;"></span><span>起点</span>
+            <span class="icon" style="background-color: blue;"></span><span>终点</span>
+            <span class="icon" style="background-color: #BFBEBF;"></span><span>可通行格</span>
+            <span class="icon" style="background-color: #333233;"></span><span>墙体</span>
+            <span class="icon" style="background-color: green;"></span><span>待检索</span>
+            <span class="icon" style="background-color: lightseagreen;"></span><span>已检索</span>
+        </div>
+    </div>
+    <div class="context">
+        <div class="show">
+            <canvas id="canvas">
+                Your browser is too old to run the canvas!!!
+            </canvas>
+            <div class="text">
+                <table class="info">
+                    <tr><td>Framerate(FPS)</td><td class="right" id="fps">Unknow!</td></tr>
+                    <tr><td>MousePos</td><td class="right" id="mousepos">Unknow!</td></tr>
+                </table>
+                <span id="result">Don't start search!</span>
+            </div>
+        </div>
+        <div class="control">
+            <button onclick="singleAStar()">单步寻路</button>
+            <button onclick="AStar()">自动寻路</button>
+            <button onclick="primMaze()">生成迷宫</button>
+            <button onclick="clearSearch()">清除搜索记录</button>
+            <button onclick="reInit()">重置</button>
+            <div class="introduction">
+                说明：<br>
+                操作方法<br><br>
+                # 鼠标拖动红色块和蓝色块修改起点和终点位置<br><br>
+                # 鼠标点击或拖动修改灰色块为墙体或非墙体<br><br>
+                # 寻路完成后不可继续点击，需要重置或清除记录<br><br>
+            </div>
+        </div>
+    </div>
+
+    <script src="gridController.js"></script>
+    <script src="sketch.js"></script>
+    <script src="createMaze.js"></script>
+    <script src="AStar.js"></script>
+</body>
+</html>
